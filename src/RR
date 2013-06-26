@@ -1,0 +1,137 @@
+
+
+import java.util.*;
+
+class RR
+
+{
+
+            Scanner sc=new Scanner(System.in);
+            int[] bur,rem,wai,ta,res;
+            int size,q,b=0,t=0,r=0,flag=0;
+            static int avgwait;
+            static int avgturn;
+            static int avgres;
+            static int simrun;
+            static int aflag=0;
+            RR(int size)
+            {
+                        this.size=size;
+                        bur=new int[size];
+                        wai=new int[size];
+                        ta=new int[size];
+                        rem=new int[size];
+                        res=new int[size];
+                        if(aflag==0){
+                          avgwait=0;
+                        	avgturn=0;
+                        	avgres=0;
+                        	simrun=0;
+                        	aflag=1;
+                        }
+                        
+            }
+            void get()
+            {
+            	
+            	int newProcessDuration;
+            	Random rand0 = new Random();
+                        for(int i=0;i<size;i++)
+                        {
+                                    //System.out.print("Enter burst time of P"+(i+1)+":");
+                        	 do {
+                                  newProcessDuration = rand0.nextInt(10); // generate burst time (0 - 10)
+                                } while(newProcessDuration == 0);
+                        	
+                                    bur[i]=rem[i]=newProcessDuration;
+                        }
+                        //System.out.print("Enter quantum time:");
+                        q=4;
+            }
+            void round()
+            {
+                        do{
+                                    flag=0;
+                                    for(int i=0;i<size;i++)
+                                    {
+                                    	        res[i]=q*i;
+                                                if(rem[i]>=q)
+                                                {
+                                                            System.out.print("P"+(i+1)+"\t");
+                                                            for(int j=0;j<size;j++)
+                                                            {
+                                                                        if(j==i)
+                                                                                    rem[i]=rem[i]-q;
+                                                                        else if(rem[j]>0)
+                                                                                    wai[j]+=q;
+                                                            }
+                                                }
+                                                else if(rem[i]>0)
+                                                {
+                                                            System.out.print("P"+(i+1)+"\t");
+                                                            for(int j=0;j<size;j++)
+                                                            {
+                                                                        if(j==i)
+                                                                                    rem[i]=0;
+                                                                        else if(rem[j]>0)
+                                                                                    wai[j]+=rem[i];
+                                                            }
+                                                }
+                                    }
+                                    for(int i=0;i<size;i++)
+                                                if(rem[i]>0)
+                                                            flag=1;
+                        }while(flag==1);
+                        for(int i=0;i<size;i++)
+                                    ta[i]=wai[i]+bur[i];
+            }
+            void display()
+            {
+                        System.out.println("\nProcess\tBurst\tWaiting\tTurnaround\tresponse time");
+                        for(int i=0;i<size;i++)
+                        {
+                                    System.out.println("P"+(i+1)+"\t"+bur[i]+"\t"+wai[i]+"\t"+ta[i]+"\t\t"+res[i]);
+                                    b+=wai[i];
+                                    t+=ta[i];
+                                    r+=res[i];
+                        }
+                        
+                        
+                        System.out.println("Simulation " + (simrun+1) + " Statistics:");
+                        System.out.println("Average waiting time:"+(b/size));
+                        System.out.println("Average Turnaround time:"+(t/size));
+                        System.out.println("Average Response time:"+(r/size));
+                       avgwait+= (b/size);
+                       avgturn+=(t/size);
+                       avgres+=(r/size);
+                       simrun++;
+                        
+            }
+            
+            void statistics() {
+            	System.out.println("Round Robin Scheduling Statistics");
+            	System.out.println("Average waiting time:"+(avgwait/simrun));
+                System.out.println("Average Turnaround time:"+(avgturn/simrun));
+                System.out.println("Average Response time:"+(avgres/simrun));
+            }
+            
+            public static void main(String arg[])
+            {
+                        for(int i=0;i<5;i++){
+                        	System.out.println("Simulation : " + (i+1));
+                        System.out.print("Scheduled processes:");
+                        int n=10;
+                        RR obj = new RR(n);
+                        obj.get();
+                        obj.round();
+                        obj.display();
+                        System.out.println("================================================================");
+                        if(i==4){
+                        	obj.statistics();
+                        	System.out.println("================================================================");	
+                        }
+                        
+                        }
+                        
+            }
+}
