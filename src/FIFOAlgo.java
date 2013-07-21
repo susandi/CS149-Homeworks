@@ -1,16 +1,14 @@
 
 import java.util.*;
 
-public class Paging {
+public class FIFOAlgo {
 
  int max_pages=100;
  
  private int high=9;
  private int low=0;
  int []priority=new int[5];
- int []removeRef=new int[5];
- boolean fillbit=false;
- int count=0; boolean FIFO,SCH,LRU,RNDP=false;
+ int lasti=0;
  static String []physicalMemo=new String[4];
 
  String pageRef;
@@ -29,7 +27,7 @@ public class Paging {
 	{		
 			int distance=0;
 			r=rangen.nextInt(high-low)+low;//gen random number between 0 thru 9
-//		 	 System.out.println("\ndecide range(0~7:0,1,2) or (7~9: >1): "+r);
+
 		 	
 			if(0<=r && r<7)
 			{	int tmp=rangen.nextInt(3);//generate random number either 0,1,2; if 2,then the number is -1
@@ -40,11 +38,10 @@ public class Paging {
 				if(i==0) {lastNum=firstNum+distance; System.out.println("first Num before: "+firstNum);}
 				else	
 				{ 	
-//					System.out.println("last Num before: "+lastNum);
 					lastNum=lastNum+distance; 
 					if(lastNum<0 || lastNum>9) lastNum=rangen.nextInt(10);
 					
-//					System.out.println("distance: "+distance+ " lastNum: "+lastNum); 
+
 				}
 			}
 			else if(7<=r && r<=9) 
@@ -53,15 +50,13 @@ public class Paging {
 				distance=tmp1;
 				
 				if(i==0){ lastNum=firstNum+distance; }
-//				System.out.println("first Num before: "+firstNum);}
 				else
 				{	
-//					System.out.println("last Num before: "+lastNum);
+
 					lastNum=lastNum+distance;
 					if(lastNum<0 || lastNum>9) lastNum=rangen.nextInt(10);
 					
-					
-//					System.out.println("distance: "+distance+ " lastNum: "+lastNum);	
+
 				}
 			}
 			//convert int to string
@@ -71,16 +66,25 @@ public class Paging {
 			sb.append(pageRef);
 	}
 	pageRef=sb.toString(); //string buffer to string
-	refToPhysicalMemo(pageRef);
+	 refToPhysicalMemo(pageRef);
+	 
+ 
  }
  
  private void refToPhysicalMemo(String prf)
- {	int i=0, tmpNum=0, availSlot=0,count=0;
- 	System.out.println("**Page ref numbers: "+prf+"**");
+ {	int i=0,count=0, availSlot=0;
+ 	int checkBit=0;
+ 	System.out.println("----------First In First Out------------");
+ 	System.out.println("**Page ref numbers: "+prf+"**\n");
  do
-	 {	//System.out.println(checkSamePageRef(prf.substring(i,i+1)));  
+	 {	
 		if(searchEmpSlotInPhyMemo()!=-1)  //if there is empty slot
-		{		if (checkSamePageRef(prf.substring(i,i+1))>0 )//if there is no redundant ref number, fill up the slot
+		{		
+	
+				checkBit=checkSamePageRef(prf.substring(i,i+1));
+			
+			
+				if (checkBit==999 )//if there is no redundant ref number, fill up the slot
 				{	count++;
 					availSlot=searchEmpSlotInPhyMemo();	
 					physicalMemo[availSlot]=prf.substring(i,i+1);
@@ -88,28 +92,37 @@ public class Paging {
 					
 					System.out.println("Added to memory: "+physicalMemo[availSlot]);
 					System.out.println();
+					if(count==4 || i==max_pages-1)
+					{
+						if(i==max_pages-1) lasti=max_pages-1;
+						FIFO();
+					}
+				
 				}
-				//else System.out.println("same page reference! skip one"); 
+				else System.out.println("same page reference! skip "+physicalMemo[checkBit]); 
+				i++;
 		}
 		else //if there is no slot, start FIFO, take one page out at a time
 		{ 
-			 fillbit=true;
+			checkBit=checkSamePageRef(prf.substring(i,i+1));
+			//			System.out.println("read ch in i: "+i+" , "+prf.substring(i,i+1));	
+			if(i==max_pages-1) lasti=max_pages-1;	
+			if(checkBit!=999){System.out.println("same page reference! skip "+physicalMemo[checkBit]);  i++;}
 			 FIFO();
-			
+		
 		}
-		i++;
+		
 		//prevRef=Integer.parseInt(prf.substring(i,i+1));
 	 }while(i<max_pages);
 	
 
 	 System.exit(0);
  }
-public void FIFO()
+private void FIFO()
 {
-	FIFO=true;
+	
 	
 	System.out.println("------PageRef------");
-
 	 for( int x=0;x<4;x++)	
 	 	System.out.print("| phymem["+x+"]: "+physicalMemo[x]+"   | ");
 	 	
@@ -118,10 +131,11 @@ public void FIFO()
 	 for( int x=0;x<4;x++)
 		 System.out.print("| priority["+x+"]: "+priority[x]+" | ");
 	 System.out.println();
-	if(fillbit==true)
-	{
-		for(int i=0;i<4;i++)
-		{
+	 
+	 if(lasti!=max_pages-1)
+	 {	
+		 for(int i=0;i<4;i++)
+		 {
 			if (priority[i]==1) 
 			{ 	
 				System.out.println(physicalMemo[i]+" was out"); 
@@ -131,9 +145,8 @@ public void FIFO()
 			}
 			else priority[i]=priority[i]-1;	
 		}
-	}
-	fillbit=false;
-
+	 }
+	 
 	
 }
  public int findLargest()
@@ -151,10 +164,8 @@ public void FIFO()
 
 public static void main(String args[])
 {
-	Paging pg=new Paging();
-	pg.genPageRef();
-
-
+	FIFOAlgo fifo=new FIFOAlgo();
+	fifo.genPageRef();
 
 }
 private int checkSamePageRef(String pf)
@@ -162,22 +173,20 @@ private int checkSamePageRef(String pf)
 	 for(int i=0;i<4;i++)
 	 {	
 		
-		  if (physicalMemo[i].contains(pf)){ 
-			// System.out.println(" redundant: "+physicalMemo[i]+","+i);
-			 return -1;}
-		  //else if (physicalMemo[i]==" ") return 1;
-		 // else return 1;
+		  if (physicalMemo[i].contains(pf)) return i;
+
 	 }
-	   return 1;
+	   return 999;
 }
 private int searchEmpSlotInPhyMemo()
 {	int i;
 	 for( i=0;i<4;i++)
 	 {	
-		//if(i==4) System.out.println("this is 4: "+physicalMemo[4]);
-		 if(physicalMemo[i]==" "){  
-			 //System.out.println("found slot: "+i);
-			 return i;}
+	
+		 if(physicalMemo[i]==" ")
+
+			 return i;
+
 	 }
 	 return -1;
 }
