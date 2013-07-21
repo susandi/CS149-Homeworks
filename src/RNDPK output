@@ -1,0 +1,289 @@
+first Num before: 3
+----------Random Pick------------
+**Page ref numbers: 3787884457793789893443333455436879021125545667866100567985557767889888778000066788224569988767669981**
+Added to memory: 3
+
+Added to memory: 7
+
+Added to memory: 8
+
+same page reference! skip 7
+same page reference! skip 8
+same page reference! skip 8
+Added to memory: 4
+
+------PageRef------
+| phymem[0]: 3   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 4   | 
+3 was out
+same page reference! skip 4
+Added to memory: 5
+
+same page reference! skip 7
+------PageRef------
+| phymem[0]: 5   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 4   | 
+4 was out
+same page reference! skip 7
+Added to memory: 9
+
+------PageRef------
+| phymem[0]: 5   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+5 was out
+Added to memory: 3
+
+same page reference! skip 7
+------PageRef------
+| phymem[0]: 3   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+8 was out
+Added to memory: 8
+
+same page reference! skip 9
+------PageRef------
+| phymem[0]: 3   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+3 was out
+same page reference! skip 8
+same page reference! skip 9
+Added to memory: 3
+
+------PageRef------
+| phymem[0]: 3   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+3 was out
+Added to memory: 4
+
+same page reference! skip 4
+------PageRef------
+| phymem[0]: 4   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+7 was out
+Added to memory: 3
+
+same page reference! skip 3
+------PageRef------
+| phymem[0]: 4   | | phymem[1]: 3   | | phymem[2]: 8   | | phymem[3]: 9   | 
+4 was out
+same page reference! skip 3
+same page reference! skip 3
+Added to memory: 4
+
+------PageRef------
+| phymem[0]: 4   | | phymem[1]: 3   | | phymem[2]: 8   | | phymem[3]: 9   | 
+3 was out
+Added to memory: 5
+
+same page reference! skip 5
+------PageRef------
+| phymem[0]: 4   | | phymem[1]: 5   | | phymem[2]: 8   | | phymem[3]: 9   | 
+4 was out
+Added to memory: 4
+
+------PageRef------
+| phymem[0]: 4   | | phymem[1]: 5   | | phymem[2]: 8   | | phymem[3]: 9   | 
+4 was out
+Added to memory: 3
+
+------PageRef------
+| phymem[0]: 3   | | phymem[1]: 5   | | phymem[2]: 8   | | phymem[3]: 9   | 
+3 was out
+Added to memory: 6
+
+same page reference! skip 8
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 5   | | phymem[2]: 8   | | phymem[3]: 9   | 
+5 was out
+Added to memory: 7
+
+same page reference! skip 9
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 9   | 
+7 was out
+Added to memory: 0
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 0   | | phymem[2]: 8   | | phymem[3]: 9   | 
+8 was out
+Added to memory: 2
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 0   | | phymem[2]: 2   | | phymem[3]: 9   | 
+9 was out
+Added to memory: 1
+
+same page reference! skip 1
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 0   | | phymem[2]: 2   | | phymem[3]: 1   | 
+0 was out
+same page reference! skip 2
+Added to memory: 5
+
+same page reference! skip 5
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 5   | | phymem[2]: 2   | | phymem[3]: 1   | 
+2 was out
+Added to memory: 4
+
+same page reference! skip 5
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 5   | | phymem[2]: 4   | | phymem[3]: 1   | 
+6 was out
+Added to memory: 6
+
+same page reference! skip 6
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 5   | | phymem[2]: 4   | | phymem[3]: 1   | 
+5 was out
+Added to memory: 7
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 4   | | phymem[3]: 1   | 
+7 was out
+Added to memory: 8
+
+same page reference! skip 6
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 8   | | phymem[2]: 4   | | phymem[3]: 1   | 
+1 was out
+same page reference! skip 6
+Added to memory: 1
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 8   | | phymem[2]: 4   | | phymem[3]: 1   | 
+4 was out
+Added to memory: 0
+
+same page reference! skip 0
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 8   | | phymem[2]: 0   | | phymem[3]: 1   | 
+1 was out
+Added to memory: 5
+
+same page reference! skip 6
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 8   | | phymem[2]: 0   | | phymem[3]: 5   | 
+0 was out
+Added to memory: 7
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 8   | | phymem[2]: 7   | | phymem[3]: 5   | 
+8 was out
+Added to memory: 9
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 9   | | phymem[2]: 7   | | phymem[3]: 5   | 
+7 was out
+Added to memory: 8
+
+same page reference! skip 5
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 9   | | phymem[2]: 8   | | phymem[3]: 5   | 
+5 was out
+Added to memory: 5
+
+same page reference! skip 5
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 9   | | phymem[2]: 8   | | phymem[3]: 5   | 
+9 was out
+Added to memory: 7
+
+same page reference! skip 7
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 5   | 
+8 was out
+same page reference! skip 6
+same page reference! skip 7
+Added to memory: 8
+
+same page reference! skip 8
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 5   | 
+7 was out
+Added to memory: 9
+
+same page reference! skip 8
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 9   | | phymem[2]: 8   | | phymem[3]: 5   | 
+9 was out
+same page reference! skip 8
+same page reference! skip 8
+Added to memory: 7
+
+same page reference! skip 7
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 5   | 
+5 was out
+same page reference! skip 8
+Added to memory: 0
+
+same page reference! skip 0
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 0   | 
+0 was out
+Added to memory: 0
+
+same page reference! skip 0
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 0   | 
+7 was out
+same page reference! skip 6
+same page reference! skip 6
+Added to memory: 7
+
+same page reference! skip 8
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 0   | 
+0 was out
+same page reference! skip 8
+Added to memory: 2
+
+same page reference! skip 2
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 7   | | phymem[2]: 8   | | phymem[3]: 2   | 
+7 was out
+Added to memory: 4
+
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 4   | | phymem[2]: 8   | | phymem[3]: 2   | 
+8 was out
+Added to memory: 5
+
+same page reference! skip 6
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 4   | | phymem[2]: 5   | | phymem[3]: 2   | 
+5 was out
+Added to memory: 9
+
+same page reference! skip 9
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 4   | | phymem[2]: 9   | | phymem[3]: 2   | 
+2 was out
+Added to memory: 8
+
+same page reference! skip 8
+------PageRef------
+| phymem[0]: 6   | | phymem[1]: 4   | | phymem[2]: 9   | | phymem[3]: 8   | 
+6 was out
+Added to memory: 7
+
+------PageRef------
+| phymem[0]: 7   | | phymem[1]: 4   | | phymem[2]: 9   | | phymem[3]: 8   | 
+8 was out
+Added to memory: 6
+
+same page reference! skip 7
+------PageRef------
+| phymem[0]: 7   | | phymem[1]: 4   | | phymem[2]: 9   | | phymem[3]: 6   | 
+6 was out
+Added to memory: 6
+
+same page reference! skip 6
+------PageRef------
+| phymem[0]: 7   | | phymem[1]: 4   | | phymem[2]: 9   | | phymem[3]: 6   | 
+4 was out
+same page reference! skip 9
+same page reference! skip 9
+Added to memory: 8
+
+------PageRef------
+| phymem[0]: 7   | | phymem[1]: 8   | | phymem[2]: 9   | | phymem[3]: 6   | 
+8 was out
+Added to memory: 1
+
+------PageRef------
+| phymem[0]: 7   | | phymem[1]: 1   | | phymem[2]: 9   | | phymem[3]: 6   | 
